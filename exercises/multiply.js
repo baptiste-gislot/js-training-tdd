@@ -9,6 +9,19 @@
  */
 
 // Your code:
+const multiply = (num1, num2) => {
+  let result = 0;
+  if (num1 === 0 || num2 === 0) return 0;
+  for (let i = 0; i < Math.abs(num2); i++) {
+    result += Math.abs(num1)
+  }
+  if (num1 < 0 && num2 < 0) {
+    return result;
+  } else if (num1 < 0 || num2 < 0) {
+    return -result
+  }
+  return result;
+}
 
 //* Begin of tests
 const assert = require('assert');

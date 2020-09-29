@@ -10,7 +10,27 @@
  */
 
 // Your code:
+const multiply = (x, y) => {
+  let resultSign = (x < 0) ?  
+                   (y > 0) ? -1 : 1 
+                   :          
+                   (y < 0) ? -1 : 1;
 
+  x = checkNeg(x);
+  y = checkNeg(y);
+
+  const doMultiplication = (x, y) => {
+    if (y === 0) return 0; 
+    if (x === 0) return -0;
+    return x + doMultiplication(x, y - 1);
+  }
+
+  return (resultSign === 1) ? doMultiplication(x, y) : -doMultiplication(x, y);
+}
+
+const checkNeg = (x) => { 
+  return (x < 0) ? -x : x;
+}
 //* Begin of tests
 const assert = require('assert');
 

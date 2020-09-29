@@ -11,6 +11,18 @@
  */
 
 // Your code:
+const jadenCase = str => {
+  let jadenStr = [];
+  const arr = str.split(' ');
+
+  for (i = 0; i < arr.length; i++) {
+    let word = arr[i];
+    let capitilizedWord = word[0].toUpperCase() + word.split(0)
+    jadenStr.push(capitilizedWord);
+  }
+
+  return jadenStr.join(' ');
+}
 
 //* Begin of tests
 const assert = require('assert');
